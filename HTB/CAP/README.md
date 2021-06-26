@@ -43,7 +43,8 @@ There is a LOT of stuff in this file. Glancing over the wall of text i noticed t
 It means i can connect with this as username.
 So i check for password and i find this
 
-![image](https://user-images.githubusercontent.com/84482765/123527231-b6d38800-d6ab-11eb-820b-b8f643c10f81.png)
+![image](https://user-images.githubusercontent.com/84482765/123527686-7b3abd00-d6af-11eb-954f-71fa0a4edf67.png)
+
 
 So hey! thats is it i think!
 I go back to my terminal and try to login via ssh
