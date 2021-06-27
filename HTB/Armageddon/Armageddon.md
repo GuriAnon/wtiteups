@@ -46,7 +46,29 @@ So metasplot can be used. I boot up my msfconsole and search for drupal
 ![image](https://user-images.githubusercontent.com/84482765/123559680-789d9d80-d76b-11eb-8552-b1cd0a28b6b2.png)
 
 And i use option number 4. After setting up the options i'm in!
+
 ![image](https://user-images.githubusercontent.com/84482765/123559705-9d921080-d76b-11eb-8491-c49806aa36dc.png)
+
+I cat the passwd file to get some more info 
+
+![image](https://user-images.githubusercontent.com/84482765/123560383-c4eadc80-d76f-11eb-8dbf-670fc07fc9d4.png)
+
+And with that i see a "brucetherealadmin" user, but no password, so i check /etc/shadow but i have no permission to see that.
+
+While i do other tests and look through the files in the server i run hydra to try to find they key to connect via ssh.
+
+        hydra -l brucetherealadmin -P /usr/share/wordlists/rockyou.txt ssh://10.10.10.233 -t 4
+
+My other tests don't go anywhere and i can't do much. But after some time i get the password for the connection!
+
+And there goes the user flag
+
+![image](https://user-images.githubusercontent.com/84482765/123560658-a554b380-d771-11eb-80a3-7ed42b4bac4f.png)
+
+
+## Root flag
+
+Now we neet some way to get root privileges.
 
 
 
