@@ -70,6 +70,55 @@ And there goes the user flag
 
 Now we neet some way to get root privileges.
 
+I had my head stuck in the rabbit hole of this priv esc. But i did it...
+
+So I first did a few tests once inside to see what was the path to do this priv esc.
+One of the firs was
+
+        sudo -l
+        
+to see what commands i can run with sudo. Because this might lead me to the right path.
+
+![image](https://user-images.githubusercontent.com/84482765/123563479-d093ce80-d782-11eb-9c4c-39205e331243.png)
 
 
+So there is this SNAP command i can use. Ok... now what is it and what it does i have to find out.
+
+one google search later and i check GTFObin: https://gtfobins.github.io/gtfobins/snap/
+This show me that i have to make the payload and load it into the server machine and execute the snap command from there. 
+
+After a painful time trying to get this to work, i couldn't. I installed FPM to compile the script. I copied it to the server over SSH and tried to run but no use.
+I also found this github:
+https://github.com/initstring/dirty_sock/
+That is basicaly a made script just for this. But i was also having some problems runing it. Downloaded both python scripts and neither worked...
+But now i knew the name of this way of priv esc is "DIRTY SOCKS" so i googled it and came across this website: https://0xdf.gitlab.io/2019/02/13/playing-with-dirty-sock.html
+And over this website there was another way of doing it. On this site there is a long line that i can echo into a file in the server itself and save that as .snap and run the same end code i from the GTFObin site.
+
+![image](https://user-images.githubusercontent.com/84482765/123563660-ed7cd180-d783-11eb-8759-894eb9aec8fd.png)
+
+now i just need to
+
+        sudo /usr/bin/snap install --devmode script.snap
+
+And BAM!!!! it installed.
+This script creates another user. And this user is not as limited as the other one. Username and password being "dirty_sock"
+
+        su dirty_sock
+
+to become that new user. Password being the same. But i'm not root yet. I instantly tried geting inside the root folder to get the flag because i was so exited.
+But i needed one more code
+
+        sudo -i
+        
+With that i become root and now i'm able to get the final flag!!!!
+
+![image](https://user-images.githubusercontent.com/84482765/123563822-d7234580-d784-11eb-8dd8-137d0d3bd55f.png)
+
+
+## Done!!!
+
+All and all it took me a few hours of head scratching to figure all this. I try to avoid spoilers as much as possible, but i roamed around the HTB foruns for a bit trying to get some tips on what direction i shoud go.
+
+What i liked about this box was more the trouble of finding how to priv esc. I think i cheesed a little using hydra to get the SSH password. I saw other people using diferent methods. They found the hashes first somehow (idk how they did that because i did not do that) and had to decode the hashes to get the password. And some other got it from the files in those directories somehow.
+But the priv esc was fun. Trying diferent versions of the same method to get where i needed.
 
