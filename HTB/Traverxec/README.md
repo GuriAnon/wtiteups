@@ -39,7 +39,7 @@ I just assume one thing to be what i think it is and move on. If it is not what 
 Moving on...
 
 I assume this is probably a way to use SSH to enter as this user. So i try to decode this hash and get the password.
-My first try was with "HASHCAT". But after a few hours trying to get it to work because, what i presume to be, a hardware incompability and/or missing "watchdog" program to monitor my hardware.
+My first try was with "HASHCAT". But after a few hours trying to get it to work because, what i presume to be, a hardware incompability and/or missing "watchdog" program to monitor my hardware, it just refuse to work.
 
 So i try with "john the ripper" and it was done way faster than i thought. 
 
