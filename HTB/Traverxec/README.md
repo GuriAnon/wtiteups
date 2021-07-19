@@ -56,7 +56,7 @@ I got the user flag. But i'm not satisfied with that. So i keep going.
 
 Not gonna lie, i got stuck pretty bad here.
 
-I whent back to tho that linpeas result. Back to that place where i found the .htpasswd file. I saw it was inside /var/nostromo/conf. So i move tho this folder to check things out.
+I whent back to that linpeas result. Back to that place where i found the .htpasswd file. I saw it was inside /var/nostromo/conf. So i move tho this folder to check things out.
 
 ![image](https://user-images.githubusercontent.com/84482765/126085386-b4c0ccc0-0e65-444f-b0aa-cdc4856d21b7.png)
 
